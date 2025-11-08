@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .w-full.max-w-4xl.bg-white.shadow-2xl.rounded-2xl.p-6
+    .flex.justify-between.items-center.mb-6
+      h1.text-3xl.font-bold.text-indigo-700.flex.items-center.gap-2 📘 My Books
+      a(href="/logout" class="text-red-500 font-semibold hover:text-red-700 transition") Logout ⎋
+
+    if books.length
+      // ✅ écrire les classes spéciales entre guillemets
+      div(class="grid md:grid-cols-2 gap-4")
+        each book in books
+          div(class="border border-gray-200 rounded-xl shadow-sm hover:shadow-md p-4 transition bg-gray-50")
+            h2.text-xl.font-semibold.text-indigo-600= book.title
+            p.text-gray-700.mt-1 By #{book.author}
+            p.text-sm.text-gray-500.mt-1 Format: Ebook • Status: Read
+            progress(value="70" max="100" class="w-full mt-2 h-2 rounded bg-gray-200 accent-indigo-500")
+    else
+      p.text-center.text-gray-500.mt-10 No books yet — start reading something 📖!

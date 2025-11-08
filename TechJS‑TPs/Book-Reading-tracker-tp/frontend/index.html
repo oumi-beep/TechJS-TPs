@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>📚 Book Reading Tracker</title>
+</head>
+<body class="bg-gradient-to-r from-purple-100 via-pink-100 to-yellow-100 min-h-screen flex items-center justify-center">
+
+  <div class="w-full max-w-3xl p-8 bg-white rounded-3xl shadow-2xl">
+    <h1 class="text-5xl font-extrabold text-center mb-8 text-purple-700 drop-shadow-lg">
+      📘 My Book Tracker
+    </h1>
+
+    <form id="bookForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input id="title" placeholder="Title" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none" required />
+      <input id="author" placeholder="Author" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none" required />
+      <input id="pages" type="number" placeholder="Total Pages" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none" required />
+      <input id="pagesRead" type="number" placeholder="Pages Read" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none" />
+      <input id="price" type="number" placeholder="Price (€)" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none" />
+      <input id="suggestedBy" placeholder="Suggested By" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none" />
+      
+      <select id="status" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none">
+        <option>Want to read</option>
+        <option>Currently reading</option>
+        <option>Read</option>
+        <option>Re-read</option>
+        <option>DNF</option>
+        <option>Returned Unread</option>
+      </select>
+      <select id="format" class="border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none">
+        <option>Print</option>
+        <option>PDF</option>
+        <option>Ebook</option>
+        <option>AudioBook</option>
+      </select>
+
+      <button type="submit" class="col-span-1 md:col-span-2 bg-purple-600 text-white py-3 rounded-xl font-semibold shadow hover:bg-purple-700 transition-all duration-300">
+        ➕ Add Book
+      </button>
+    </form>
+
+    <div id="summary" class="mt-8 bg-purple-50 rounded-2xl p-6 shadow text-center text-gray-700 font-medium"></div>
+
+    <div id="bookList" class="mt-6 grid gap-4"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

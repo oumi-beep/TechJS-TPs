@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .bg-white.shadow-xl.rounded-2xl.p-8.w-96
+    h1.text-3xl.font-bold.text-center.text-indigo-700.mb-6 Login to Continue
+
+    form(action="/login" method="POST" class="space-y-4")
+      input(type="text" name="username" placeholder="👤 Username" required class="border p-2 w-full rounded focus:ring-2 focus:ring-indigo-400 focus:outline-none")
+      input(type="password" name="password" placeholder="🔒 Password" required class="border p-2 w-full rounded focus:ring-2 focus:ring-indigo-400 focus:outline-none")
+      button(type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white w-full py-2 rounded-lg font-semibold transition") Log In
+
+    p.text-center.mt-4.text-gray-600
+      | Don’t have an account?
+      a.text-indigo-700.font-semibold.ml-1(href="/register") Register here →
